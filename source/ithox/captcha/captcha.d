@@ -1,8 +1,12 @@
 module ithox.captcha.captcha;
 
 import std.random;
-import ithox.image.color;
-import ithox.image.png;
+import dmagick.Image;
+import dmagick.DrawingContext;
+import dmagick.Geometry;
+import dmagick.Color;
+
+import std.experimental.logger.core;
 
 ///验证码使用到的字符串
 package enum ITHOX_CAPTCHA_CHARACTER = "abcdefghkmnprstuvwyzABCDEFGHKLMNPRSTUVWYZ23456789";
@@ -14,7 +18,7 @@ class IthoxCaptcha{
 		///高
 		int _height = 36;
 		///背景色
-		string _background = "#EDF7FF";
+		string _background = "#D1EEEE";
 		///验证码长度
 		ubyte _length = 4;
 		///字体
@@ -22,12 +26,13 @@ class IthoxCaptcha{
 		///验证码
 		string _code ="donglei";
 		///图片
-		IndexedImage image;
+		Image image;
+		///
+		DrawingContext draw;
 	}
 
 	this()
 	{
-		this._code = "";
 	}
 
 	this(int width, int height)
@@ -95,10 +100,17 @@ class IthoxCaptcha{
 	{
 		this._code = "";
 		randCode();
-		initCanvas();
-		initBackground();
-		import ithox.image.png;
-		writePng("test-captcha.png", image);
+		this.draw = new DrawingContext();
+		image = new Image(Geometry(_width, _height),new Color(_background));
+		image.addNoise(NoiseType.ImpulseNoise);
+		
+			draw.text(10, 20, _code);
+			draw.fontSize(20);
+			draw.fontWeight(10);
+			draw.draw(image);
+		image.write(_code ~ ".png");
+
+		logf("code name  is %s ", _code ~ ".png");
 		return "";
 	}
 	///生成随机吗
@@ -109,17 +121,7 @@ class IthoxCaptcha{
 			this._code ~= ITHOX_CAPTCHA_CHARACTER[uniform(0, 49)];
 		}
 	}
-	///初始化画布
-	private void initCanvas()
-	{
-		image = new IndexedImage(_width, _height);
-	}
-	///初始化背景
-	private void initBackground()
-	{
-		image.addColor(Color.fromString(_background));
-	}
-
+	
 
 }
 
