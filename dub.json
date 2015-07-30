@@ -4,7 +4,7 @@
 	"copyright": "Copyright © 2015, xiaosan",
     "authors": [ "xiaosan" ],
     "versions": ["MagickCore_691" ],
-    "libs": [ "DMagick","MagickCore-6.Q16"],
+    "libs": [ "MagickCore-6.Q16"],
 	"dependencies": {
 	}
 }

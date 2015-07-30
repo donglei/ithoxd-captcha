@@ -1,14 +1,14 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{34716661-DB4B-403D-A5D5-9443AE8A8419}") = "ithoxd-captcha", "ithoxd-captcha.visualdproj", "{A136990A-2AC5-46EB-97C0-00700E6E38B7}"
+Project("{5FC6BAAD-BB76-4AA6-A2CC-2CD8B8D6B295}") = "ithoxd-captcha", "ithoxd-captcha.visualdproj", "{C32225B4-9A73-41E5-9647-9AE0BFAA0028}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		debug|Win32 = debug|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A136990A-2AC5-46EB-97C0-00700E6E38B7}.debug|Win32.ActiveCfg = debug|Win32
-		{A136990A-2AC5-46EB-97C0-00700E6E38B7}.debug|Win32.Build.0 = debug|Win32
+		{C32225B4-9A73-41E5-9647-9AE0BFAA0028}.debug|Win32.ActiveCfg = debug|Win32
+		{C32225B4-9A73-41E5-9647-9AE0BFAA0028}.debug|Win32.Build.0 = debug|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
