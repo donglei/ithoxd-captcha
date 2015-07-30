@@ -2,7 +2,9 @@
 	"name": "ithoxd-captcha",
 	"description": "A minimal D application.",
 	"copyright": "Copyright © 2015, xiaosan",
-	"authors": ["xiaosan"],
+    "authors": [ "xiaosan" ],
+    "versions": ["MagickCore_691" ],
+    "libs": [ "DMagick","MagickCore-6.Q16"],
 	"dependencies": {
 	}
 }
